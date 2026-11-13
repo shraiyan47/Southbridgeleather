@@ -1,31 +1,13 @@
 import Link from "next/link";
 import { categories, photo } from "./data";
+import Nav from "@/component/nav";
 
 export default function Home() {
   return (
     <>
-      <div className="announcement">
-        A slower kind of making · Free shipping on orders over 2000 BDT
-      </div>
-      <header className="nav">
-        <Link className="wordmark" href="/">
-          SOUTHBRIDGE <span>LEATHER </span>
-        </Link>
-        <nav>
-          <a className="nav-link" href="#collections">
-            Shop
-          </a>
-          <a className="nav-link" href="#services">
-            Our craft
-          </a>
-          <a className="nav-link" href="#tannery">
-            The tannery
-          </a>
-        </nav>
-        <a className="nav-cta" href="#contact">
-          Get in touch <span>↗</span>
-        </a>
-      </header>
+      <Nav />
+
+       
       <main>
         <section className="hero">
           <div
@@ -211,14 +193,16 @@ export default function Home() {
             </p>
             <a
               className="contact-email"
-              href="mailto:hello@southbridgeleather.com"
+              href="mailto:info@southbridgeleather.com"
             >
-              hello@southbridgeleather.com <span>↗</span>
+              info@southbridgeleather.com <span>↗</span>
             </a>
             <div className="address">
               <b>THE WORKSHOP & TANNERY</b>
-              <span>18 Foundry Lane, Portland, ME 04101</span>
-              <span>Monday – Friday, 9am – 5pm</span>
+              <span>124 Hazaribagh Rd, Dhaka - 1205, Bangladesh</span>
+              <span>Saturday to Thursday, 9am – 9pm</span>
+              <span> Call: <a href="tel:+8801859506936">+880 185 950 6936</a> / <a href="tel:+8801846825846">+880 184 682 5846</a> </span>
+              <span> Whatsapp: <a href="https://wa.me/8801859506936">+880 185 950 6936</a> / <a href="https://wa.me/8801846825846">+880 184 682 5846</a> </span>
             </div>
           </div>
           <div className="map-wrap">
@@ -228,7 +212,7 @@ export default function Home() {
             />
             <a
               className="map-label"
-              href="https://www.openstreetmap.org/"
+              href="https://maps.app.goo.gl/nZS8qgyu8VWtkVXX8"
               target="_blank"
               rel="noreferrer"
             >
@@ -245,13 +229,13 @@ export default function Home() {
           <p>
             Made slowly. Carried daily.
             <br />
-            Portland, Maine · Est. 2014
+            Dhaka, Bangladesh · Est. 2024
           </p>
           <div className="footer-links">
             <a href="#collections">Shop</a>
             <a href="#services">Custom work</a>
             <a href="#tannery">Our tannery</a>
-            <a href="mailto:hello@southbridgeleather.com">Contact</a>
+            <a href="mailto:info@southbridgeleather.com">Contact</a>
           </div>
           <div className="social">
             <a href="https://www.facebook.com/southbridgeleather">Facebook ↗</a>
@@ -260,7 +244,7 @@ export default function Home() {
         </div>
         <div className="footer-bottom">
           {"© 2026 Southbridge Leather Co."}
-          <span>MADE WITH CARE, IN MAINE</span>
+          <span>MADE WITH CARE, IN BANGLADESH</span>
           <a href="#">Privacy & terms</a>
         </div>
       </footer>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { categories, photo, products } from "../../data";
+import Nav from "../../../component/nav";
 import ProductGallery from "./product-gallery";
 
 export function generateStaticParams() {
@@ -10,28 +11,10 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
   const category = categories.find((item) => item.slug === params.slug);
   if (!category) notFound();
   const list = products.filter((product) => product.category === category.slug);
-  const ProductGalleryComponent = ProductGallery as unknown as (props: {
-    products: typeof list;
-  }) => JSX.Element;
 
   return (
     <>
-      <div className="announcement">
-        A slower kind of making · Free shipping on orders over $250
-      </div>
-      <header className="nav">
-        <Link className="wordmark" href="/">
-          SOUTHBRIDGE <span>LEATHER CO.</span>
-        </Link>
-        <nav>
-          <a href="/#collections">Shop</a>
-          <a href="/#services">Our craft</a>
-          <a href="/#tannery">The tannery</a>
-        </nav>
-        <a className="nav-cta" href="/#contact">
-          Get in touch <span>↗</span>
-        </a>
-      </header>
+      <Nav />
       <main className="category-page">
         <div className="breadcrumbs">
           <Link href="/">HOME</Link>
@@ -65,7 +48,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
           </div>
           <span>{list.length} PIECES</span>
         </div>
-        <ProductGalleryComponent products={list} />
+        <ProductGallery products={list} />
         <div className="category-back">
           <Link className="text-link" href="/#collections">
             ← Back to all collections
@@ -75,7 +58,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
       <footer className="footer">
         <div className="footer-top">
           <Link className="wordmark footer-mark" href="/">
-            SOUTHBRIDGE <span>LEATHER CO.</span>
+            SOUTHBRIDGE <span>LEATHER </span>
           </Link>
           <p>
             Made slowly. Carried daily.
@@ -86,16 +69,16 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
             <a href="/#collections">Shop</a>
             <a href="/#services">Custom work</a>
             <a href="/#tannery">Our tannery</a>
-            <a href="mailto:hello@southbridgeleather.com">Contact</a>
+            <a href="mailto:info@southbridgeleather.com">Contact</a>
           </div>
           <div className="social">
             <a href="#">Instagram ↗</a>
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© 2026 Southbridge Leather Co.</span>
+          <span>© 2026 Southbridge LEATHER </span>
           <span>MADE WITH CARE, IN MAINE</span>
-          <a href="#">Privacy & terms</a>
+          <a href="/privacy-policy">Privacy & terms</a>
         </div>
       </footer>
     </>
